@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<title><%= title %></title>
+	<link rel='stylesheet' href= '/stylesheets/style.css' />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	</head>
+	<body>
+		<h1>Sign Up</h1>
+		<p> Please Sign Up </p>
+		<div id="user">
+			<form method="post" action="signup/addname">
+			<div>
+				<input type="text" name="firstName" placeholder="Enter First Name" required="First Name">
+			</div>
+			<div>
+				<input type="text" name="lastName" placeholder="Enter Last Name" required="Last Name">
+			</div>
+			<div>
+				<input type="text" name="mobile" placeholder="Enter Mobile" required=" Mobile Number">
+			</div>
+			<div>
+				<input type="email" name="email"  placeholder="Enter Email" required="Email">
+			</div>
+			<div>
+				<input type="password" name="password" placeholder="Enter Password" required="Password">
+			</div>
+			<div>
+				<input type="password" name="repeat-password" placeholder="Repeat Password " required="Verify Password">
+			</div>
+			<div>
+				<input type="submit" name="btnsignup" id = "btnsignup " value="Sign Up">
+			</div>
+			</form>
+		</div>
+		<script>
+				$(document).ready(function() {
+					alert("hello");
+					console.log("hello");
+					let psd =$('.password').val();
+					console.log(psd);
+					let psd_re = $('.repeat-password').val();
+					console.log(psd_re);
+					$('#btnsignup').on('click' , function(){
+						if(psd!==psd_re)
+						{
+							alert("Password not match !");
+							$('.password').focus();
+						}
+					}); 
+				});
+			</script>
+</body>
+</html>

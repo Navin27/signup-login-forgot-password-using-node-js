@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<title><%= title %></title>
+	<link rel='stylesheet' href= '/stylesheets/style.css' />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	</head>
+	<body>
+		<h1>Login </h1>
+		<p> Please Login  </p>
+		<div>
+      <form method = "post"  action ="/logon/user" id="loginform">
+  			<div>
+  				<input type="text" name="email" placeholder="Enter Email" required="Email">
+  			</div>
+  			<div>
+  				<input type="password" name="password" placeholder="Enter Password" required="Password">
+  			</div>
+  			<div>
+  				<input type="submit" name="Login" value="Log In">
+			</div>
+			<div>
+				<a href='/forgotpsd/changePassword'> forgot password ? </a>
+			</div>  
+			<div><a href ='/signup' target = "_blank"> Sign Up</a></div>
+    </form>
+		</div>
+		<script>
+		$("#loginform").on('submit', function(e) {
+			console.log(" ajxa call");
+			var url = "http://localhost:8000/login/user"; 
+			$.ajax({
+				   type: "POST",
+				   url: url,
+				   data: $("#loginform").serialize(), // serializes the form's elements.
+				   success: function(data)
+				   {
+					    alert('logged In');
+					    window.localStorage.setItem(key = 'token', value = data.token)//Set in localStorage.
+						window.location.href = 'http://localhost:8000/users/home/'+data.token;//Redirect the user to the authenticated landing page
+				   }
+				 });
+		
+			e.preventDefault(); 
+		});
+	</script>
+</body>
+</html>

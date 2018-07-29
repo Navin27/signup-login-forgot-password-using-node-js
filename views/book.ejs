@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<title> Welcome </title>
+	<link rel='stylesheet' href= '/stylesheets/style.css' />
+	</head>
+	<body>
+		<h1>Welcome <%= title %> </h1>
+    <p> Search Bible Book </p>
+		<div id="books">
+			<form method="get" action="/books/book">
+			<div>
+				<input type="text" name="book_name" placeholder="Enter Book Name" required="Book Name">
+			</div>
+			<div>
+				<input type="submit" name="find" value="Find Book">
+			</div>
+			</form>
+		</div>
+</body>
+</html>
