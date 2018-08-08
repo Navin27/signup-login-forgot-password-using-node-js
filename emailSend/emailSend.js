@@ -1,3 +1,4 @@
+"use strict";
 var nodemailer = require('nodemailer');
 var account = {
     user : "navin2781xav@gmail.com",

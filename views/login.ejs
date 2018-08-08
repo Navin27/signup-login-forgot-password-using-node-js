@@ -38,6 +38,9 @@
 					    alert('logged In');
 					    window.localStorage.setItem(key = 'token', value = data.token)//Set in localStorage.
 						window.location.href = 'http://localhost:8000/users/home/'+data.token;//Redirect the user to the authenticated landing page
+				   },
+				   error : function(data){
+					   alert(data.status + ': '+data.value);
 				   }
 				 });
 		

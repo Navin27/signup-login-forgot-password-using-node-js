@@ -89,7 +89,7 @@ router.post("/user",(req, res) =>
       });
      }).catch((e) => {
        console.log(e);
-      res.status(400).send('user not found');
+      res.status(400).send({status: 404 , value :'user not found'});
    });
     // Signup.find({username : req.body.username, password : req.body.password} , function(err, user)
     // {
